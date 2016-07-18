@@ -1,12 +1,16 @@
 import React from 'react';
+import Accounts from './accounts'
+const navbarOverflow = {overflow: 'visible'};
 
 const Header = () => {
   return (
-    <ul className="w3-navbar w3-blue-grey w3-large">
-      <li className="w3-yellow"><a href="#">MarkBin</a></li>
-      <li><a href="#">Sign Up</a></li>
-      <li><a href="#">Create Bin</a></li>
-    </ul>
+    <nav className="nav navbar-default">
+      <div className="navbar-header"><a className="navbar-brand">MarkBin</a></div>
+      <ul className="nav navbar-nav">
+        <li className="nav-item"><a>Create Bin</a></li>
+        <li className="nav-item"><Accounts /></li>
+      </ul>
+    </nav>
   );
 };
 

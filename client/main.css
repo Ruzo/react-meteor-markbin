@@ -1,1 +1,9 @@
 /* CSS declarations go here */
+#login-buttons {
+  margin: 12px;
+  font-size: 24px;
+}
+
+nav {
+  font-size: 24px;
+}
