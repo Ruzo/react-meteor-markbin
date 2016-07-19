@@ -1,16 +1,10 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
+import {Router, browserHistory} from 'react-router';
+import routes from './routes';
 import {Meteor} from 'meteor/meteor';
-import Header from './components/header';
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <Header />
-      </div>
-    );
-  }
-}
-
-Meteor.startup(() => ReactDOM.render(<App />, document.getElementById("container")));
+Meteor.startup(() => ReactDOM.render(
+  <Router history={browserHistory} routes={routes} />, document.getElementById("container")
+  )
+);

@@ -1,13 +1,15 @@
 import React from 'react';
-import Accounts from './accounts'
+import {Link} from 'react-router';
+import Accounts from './accounts';
+
 const navbarOverflow = {overflow: 'visible'};
 
-const Header = () => {
+const Header = ({binsInsert}) => {
   return (
     <nav className="nav navbar-default">
-      <div className="navbar-header"><a className="navbar-brand">MarkBin</a></div>
+      <div className="navbar-header"><Link to="/" className="navbar-brand">MarkBin</Link></div>
       <ul className="nav navbar-nav">
-        <li className="nav-item"><a>Create Bin</a></li>
+        <li className="nav-item"><a href='#' onClick={binsInsert.bind(this)}>Create Bin</a></li>
         <li className="nav-item"><Accounts /></li>
       </ul>
     </nav>
