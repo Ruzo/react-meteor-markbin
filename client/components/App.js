@@ -3,7 +3,6 @@ import {Meteor} from 'meteor/meteor';
 import Header from './header';
 import {Bins} from '../../imports/collections/bins';
 import * as binActions from '../actions/bins';
-import BinsList from './bins_list';
 
 class App extends Component {
 

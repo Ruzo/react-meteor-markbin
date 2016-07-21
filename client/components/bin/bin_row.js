@@ -13,7 +13,8 @@ const BinRow = ({bin, deleteBin}) => {
       <td><Link to={linkPath} className="glyphicon glyphicon-edit"></Link></td>
       <td>{bin._id}</td>
       <td>{bin.createdAt.toDateString()}</td>
-      <td>{bin.sharedWith.map(user => `${user}, `)}</td>
+      <td>{bin.sharedWith.map((user, index, sharedWith) =>
+                                `${user}${index == sharedWith.length - 1 ? '' : ', '}`)}</td>
       <BinDelete id={bin._id} handleDelete={handleDelete}/>
     </tr>
   );

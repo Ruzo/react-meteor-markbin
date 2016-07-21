@@ -24,6 +24,17 @@ Meteor.methods({
 
   'bins.markdown.update': function(bin, content){
     return Bins.update({_id: bin._id}, {$set: {markdown: content}});
+  },
+
+  'bins.add.shared.email': function(id, email){
+    console.log(`Adding ${email} in ${id}`);
+    return Bins.update({_id: id}, {$push: {sharedWith: email}});
+  },
+
+  'bins.remove.shared.email': function(bin, email){
+    if(this.userId != bin.ownerId) {return;}
+    console.log(`Removing ${email} from ${bin._id}`);
+    return Bins.update({_id: bin._id}, {$pull: {sharedWith: email}});
   }
 });
 

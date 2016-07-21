@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Meteor} from 'meteor/meteor';
 import {createContainer} from 'meteor/react-meteor-data';
 import BinRow from './bin_row';
-import {Bins} from '../../imports/collections/bins';
+import {Bins} from '../../../imports/collections/bins';
 
 class BinsList extends Component{
   deleteBin(id){
@@ -32,6 +32,7 @@ class BinsList extends Component{
 
 export default createContainer(() => {
   Meteor.subscribe('bins');
+  Meteor.subscribe('sharedBins');
 
   return {bins: Bins.find({}).fetch()};
 }, BinsList);

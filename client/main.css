@@ -8,3 +8,41 @@ nav {
   font-size: 24px;
 }
 
+.detailsHeader {
+  display: flex;
+  background-color: #eee;
+  padding: 5px 15px;
+}
+
+.binView {
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+}
+
+.binShare {
+  margin: 5px 0px;
+}
+
+.sharedList {
+  font-size: medium;
+  padding-top: 5px;
+}
+
+.sharedEmail {
+  position: relative;
+  display: inline-block;
+}
+
+.sharedEmail .deleteX {
+  visibility: hidden;
+  color: red;
+  margin-left: -10px;
+  padding-bottom: 10px;
+  position: absolute;
+  top: -5px;
+  left:98%;
+}
+
+.sharedEmail:hover .deleteX {
+  visibility: visible;
+}
